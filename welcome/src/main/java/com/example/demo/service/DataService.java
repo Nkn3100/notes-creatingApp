@@ -32,11 +32,19 @@ public class DataService {
 	 public List<Data> getNotes(){
 		 return (List<Data>) dataRepository.findAll();
 	 }
+	 public Data getNoteById(String title){
+		 Optional<Data> ext=dataRepository.findById(title);
+		 Data newData = new Data();
+		 newData.setTitle(ext.get().getTitle());
+		 newData.setNote(ext.get().getNote());
+		 return newData;
+	 }
 	 public String addNote(Data data) {
 		 Data newData = new Data();
 		 newData.setTitle(data.getTitle());
 		 newData.setNote(data.getNote());
 		 dataRepository.save(newData);
+		 
 		 return newData.getTitle();
 		 
 	 }
