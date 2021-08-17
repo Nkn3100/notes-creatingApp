@@ -2,21 +2,23 @@ import './index.css';
 
 import {BrowserRouter, Route} from 'react-router-dom';
 
-// import App from './App';
-import Create from './Create';
-import Delete from './Delete';
-import Edit from './Edit';
+import CreateNoteComponent from './CreateNoteComponent';
 import Home from './Home';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import UpdateNoteComponent from './UpdateNoteComponent';
 import reportWebVitals from './reportWebVitals';
+
+// import App from './App';
+
 
 ReactDOM.render(
 <BrowserRouter>
   <Route exact path = "/" component = {Home} />
-  <Route path = "/create" component = {Create} />
-  <Route path = "/edit" component = {Edit} />
-  <Route path = "/delete" component = {Delete} />
+  
+
+  <Route path = "/createNote" component = {CreateNoteComponent} />
+  <Route path = "/updateNote/:id" component = {UpdateNoteComponent} />
 </BrowserRouter>,
   document.getElementById('root')
 );

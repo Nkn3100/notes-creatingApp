@@ -1,19 +1,19 @@
-import { Link } from 'react-router-dom';
-import React from 'react';
+import './App.css';
 
-class Home extends React.Component{
-    // constructor(){
-    //     super();
-    // }
-    render(){
+import React from 'react';
+import UserComponent from './UserComponent';
+
+//import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
+
+function Home(){
         return(
-            <div>
-            <p>Hi! Create note here</p>
-            <Link to="/create" style={{ textDecoration: 'none', color: 'red' }}>Create Note   </Link>
-            <Link to="/edit" style={{ textDecoration: 'none', color: 'red' }}>Edit Code  </Link>
-            <Link to="/delete" style={{ textDecoration: 'none', color: 'red' }}>Delete Note</Link>
-            </div>
-        )
-    }
+               <div className="bg">
+                  <UserComponent />
+                </div>  
+            );
+
 }
 export default Home;
